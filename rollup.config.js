@@ -1,6 +1,5 @@
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
-// import builtins from 'rollup-plugin-node-builtins'
 
 export default {
     input: 'main.js',
@@ -16,7 +15,6 @@ export default {
             browser: true,
             preferBuiltins: false
         }),
-        commonjs(),
-        // builtins()
+        commonjs()
     ]
 }
