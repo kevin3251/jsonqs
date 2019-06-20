@@ -41,7 +41,15 @@ export function stringify(input) {
 }
 
 export function parse(input) {
-    let data = qs.parse(input)
+    let query = (typeof input === 'string')
+        ? input
+        : ''
+
+    query = (query[0] === '?')
+        ? query.slice(1)
+        : query
+
+    let data = qs.parse(query)
     return unflatten(data)
 }
 
